@@ -43,12 +43,12 @@ class UIManager(BaseSingletonManager):
             self.parent().log().engine.debug(f'unable to instantiate view of type: {view_cls}')
 
     def revert_view(self):
-        self.change_to_menu(self.previous_view)
+        self.change_to_view(self.previous_view)
 
     def change_to_tab(self):
         pass
 
-    def change_to_menu(self, menu: V):
+    def change_to_view(self, menu: V):
         self.previous_view = self.current_view
         self.current_view = menu
         self.shutdown_previous_view()

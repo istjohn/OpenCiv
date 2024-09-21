@@ -35,7 +35,7 @@ class HexGrid(Entity):
         hex_height = 2 * radius
         vert_offset = hex_height * 3 / 4
 
-        self.grid: Dict(int, Dict(int, BaseTile)) = {}
+        self.grid: Dict[int, Dict[int, BaseTile]] = {}
 
         for y in range(height):
             row = HexGridRow()

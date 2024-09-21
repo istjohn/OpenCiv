@@ -15,7 +15,7 @@ from openciv.gameplay.civilizations.rome import Rome
 from openciv.gameplay.leaders.ceasar import Ceasar
 from openciv.gameplay.player import Player
 from openciv.gameplay.resource import ResourceValueType
-from typing import Union, List
+from typing import Union, List, Dict, Any
 
 
 class GameManager(BaseSingletonManager):
@@ -122,6 +122,9 @@ class GameManager(BaseSingletonManager):
         check_state(self)
         setup_turns(self)
         finish(self)
+
+    def game_data(self) -> Dict[str, Dict[Any, Any]]:
+        return self.i18n_manager.get_data()['en_EN'] # TODO replace this...
 
     def map(self) -> MapManager:
         return self.map_manager

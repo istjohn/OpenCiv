@@ -54,8 +54,8 @@ class BaseUI:
     def DropdownMenuButton(self, *args, **kwargs):
         return _DropdownMenuButton(*args, **kwargs)
     
-    def ListView(self, items, on_change: callable, title: str = "", **kwargs):
-        return _ListView(items, on_change, title, **kwargs)
+    def ListView(self, items: list[str], on_change: callable, title: str = "", item_tooltips: list[str] = None, **kwargs):
+        return _ListView(items, on_change, title, item_tooltips, **kwargs)
 
     def get_aspect_ratio(self) -> float:
         from ursina import window
